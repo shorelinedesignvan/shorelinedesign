@@ -3,703 +3,1225 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Shoreline Design — Artisan Partner Program</title>
+<title>Shoreline Design — Forever Furniture, Rooted in Nicaragua</title>
+<meta name="description" content="Shoreline Design brings MasayaCo's handcrafted, FSC-certified teak furniture from Nicaragua to Canada. Heirloom quality, sustainably grown, artisan made."/>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --sand: #f5f0e8;
+  --bark: #6b4f3a;
+  --moss: #4a5e3a;
+  --stone: #9e9585;
+  --ivory: #fdfaf5;
+  --charcoal: #1e1e1e;
+  --teak: #c4874a;
+  --cream: #ede8dc;
+  --white: #ffffff;
+}
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f5f0e8;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 40px 20px;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-  .page {
-    width: 800px;
-    background: #fdfaf5;
-    box-shadow: 0 8px 48px rgba(0,0,0,0.12);
-    overflow: hidden;
-  }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--ivory);
+  color: var(--charcoal);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-  /* TOP BAR */
-  .top-bar {
-    background: #2c2c2c;
-    padding: 10px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .top-bar span {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #888;
-  }
-  .top-bar a {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: #c4874a;
-    text-decoration: none;
-  }
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(30,30,30,0.96);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 68px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.nav-logo span { color: var(--teak); }
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--teak); }
+.nav-cta {
+  background: var(--teak);
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  letter-spacing: 1px !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: #b37640 !important; color: white !important; }
 
-  /* HERO */
-  .hero {
-    background: #2c2c2c;
-    padding: 52px 48px 44px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(196,135,74,0.15), transparent 70%);
-  }
-  .hero-eyebrow {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #c4874a;
-    margin-bottom: 16px;
-  }
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: white;
-    line-height: 1.05;
-    margin-bottom: 8px;
-  }
-  .hero-title em {
-    font-style: italic;
-    color: #c4874a;
-  }
-  .hero-subtitle {
-    font-size: 15px;
-    color: #aaa;
-    font-weight: 300;
-    margin-top: 14px;
-    max-width: 480px;
-    line-height: 1.7;
-  }
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 68px;
+  background: var(--charcoal);
+  overflow: hidden;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 64px 80px 80px;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teak);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 62px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.0;
+  margin-bottom: 24px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--teak);
+}
+.hero-body {
+  font-size: 17px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 440px;
+  margin-bottom: 40px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--teak);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #b37640; transform: translateY(-1px); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: border-color 0.2s, background 0.2s;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--teak); background: rgba(196,135,74,0.1); }
 
-  /* PRODUCT STRIP */
-  .product-strip {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 220px;
-    overflow: hidden;
-  }
-  .product-strip img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.88) saturate(0.9);
-    transition: filter 0.3s;
-  }
-  .product-strip img:hover { filter: brightness(1) saturate(1); }
+.hero-images {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  overflow: hidden;
+}
+.hero-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85);
+  transition: filter 0.4s;
+}
+.hero-images img:hover { filter: brightness(1); }
+.hero-img-large {
+  grid-row: 1 / 3;
+}
 
-  /* PRODUCT GALLERY */
-  .gallery-section {
-    margin-bottom: 40px;
-  }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-  }
-  .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    aspect-ratio: 1;
-    background: #ede8dc;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s;
-  }
-  .gallery-item:hover img { transform: scale(1.06); }
-  .gallery-item .gallery-label {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.65));
-    color: white;
-    font-size: 9px;
-    font-weight: 500;
-    padding: 14px 7px 6px;
-    line-height: 1.3;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  .gallery-item:hover .gallery-label { opacity: 1; }
+/* ─── STATS BAR ─── */
+.stats-bar {
+  background: var(--teak);
+  padding: 32px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.stat-item { text-align: center; }
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  display: block;
+  line-height: 1;
+}
+.stat-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  display: block;
+}
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,0.25);
+}
 
-  /* BODY */
-  .body {
-    padding: 44px 48px;
-  }
+/* ─── SECTION COMMONS ─── */
+section { padding: 100px 80px; }
+.section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teak);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.section-body {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+  max-width: 600px;
+}
 
-  /* INTRO */
-  .intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #e8e2d8;
-  }
-  .intro-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: #2c2c2c;
-    margin-bottom: 12px;
-    line-height: 1.3;
-  }
-  .intro-text p {
-    font-size: 13.5px;
-    color: #555;
-    line-height: 1.8;
-  }
-  .intro-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: center;
-  }
-  .stat {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #c4874a;
-    min-width: 70px;
-  }
-  .stat-label {
-    font-size: 12.5px;
-    color: #666;
-    line-height: 1.5;
-  }
+/* ─── PRODUCTS ─── */
+#products { background: var(--ivory); }
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+.products-header .section-title { margin-bottom: 0; }
+.view-all {
+  font-size: 13px;
+  color: var(--teak);
+  text-decoration: none;
+  border-bottom: 1px solid var(--teak);
+  padding-bottom: 2px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+.product-card:hover img { transform: scale(1.04); }
+.product-info {
+  padding: 16px 18px 20px;
+}
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.product-sub {
+  font-size: 12px;
+  color: var(--stone);
+  letter-spacing: 0.5px;
+}
 
-  /* TIERS */
-  .section-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #c4874a;
-    margin-bottom: 20px;
-  }
+/* ─── SUSTAINABILITY ─── */
+#sustainability {
+  background: var(--charcoal);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 100px 80px;
+}
+#sustainability .section-title { color: white; }
+#sustainability .section-body { color: rgba(255,255,255,0.55); max-width: 100%; }
+.sustain-points {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+}
+.sustain-point {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.sustain-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(196,135,74,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.sustain-point h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+.sustain-point p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+.sustain-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.sustain-image-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.sustain-image-grid img:first-child {
+  grid-column: 1 / 3;
+  aspect-ratio: 16/9;
+}
 
-  .tiers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-  .tier {
-    border: 1px solid #e8e2d8;
-    border-radius: 12px;
-    padding: 22px 20px;
-    background: white;
-    position: relative;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .tier:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
-  .tier.featured {
-    border-color: #c4874a;
-    background: linear-gradient(145deg, #fdf6ee, #fff);
-  }
-  .tier-name {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 6px;
-  }
-  .tier.featured .tier-name { color: #c4874a; }
-  .tier-discount {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: #2c2c2c;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .tier-threshold {
-    font-size: 11px;
-    color: #aaa;
-    margin-bottom: 16px;
-  }
-  .tier-perks {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-  .tier-perks li {
-    font-size: 12px;
-    color: #555;
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    line-height: 1.4;
-  }
-  .tier-perks li::before {
-    content: '✦';
-    color: #c4874a;
-    font-size: 9px;
-    margin-top: 2px;
-    flex-shrink: 0;
-  }
-  .featured-badge {
-    position: absolute;
-    top: -1px; right: 14px;
-    background: #c4874a;
-    color: white;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 0 0 6px 6px;
-  }
+/* ─── STORY ─── */
+#story { background: var(--sand); }
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.story-image {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+.story-image img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+.story-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(30,30,30,0.88);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border-left: 3px solid var(--teak);
+}
+.story-badge .badge-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.story-badge .badge-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 1px;
+}
+.story-content { padding: 20px 0; }
+.story-content .section-body { margin-bottom: 24px; }
+.story-content .section-body + .section-body { margin-top: 0; }
+.founders {
+  display: flex;
+  gap: 20px;
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid #ddd8ce;
+}
+.founder {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+.founder-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.founder-role {
+  font-size: 11px;
+  color: var(--teak);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
 
-  /* REFERRAL SECTION */
-  .referral-box {
-    background: #2c2c2c;
-    border-radius: 14px;
-    padding: 30px 32px;
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 24px;
-    align-items: center;
-  }
-  .referral-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: white;
-    margin-bottom: 8px;
-  }
-  .referral-box p {
-    font-size: 13px;
-    color: #aaa;
-    line-height: 1.7;
-    max-width: 420px;
-  }
-  .referral-credit {
-    text-align: center;
-    background: #c4874a;
-    border-radius: 10px;
-    padding: 18px 24px;
-    min-width: 120px;
-  }
-  .referral-credit .amount {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: white;
-    display: block;
-  }
-  .referral-credit .credit-label {
-    font-size: 10px;
-    color: rgba(255,255,255,0.75);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    display: block;
-    margin-top: 4px;
-  }
+/* ─── PRODUCTION ─── */
+#production {
+  background: var(--ivory);
+  text-align: center;
+  padding: 100px 80px;
+}
+#production .section-title { margin: 0 auto 16px; }
+#production .section-body { margin: 0 auto 60px; text-align: center; }
+.production-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+.prod-stat {
+  background: white;
+  border-radius: 12px;
+  padding: 32px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  border-top: 3px solid var(--teak);
+}
+.prod-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--teak);
+  display: block;
+  margin-bottom: 8px;
+}
+.prod-stat-label {
+  font-size: 12px;
+  color: var(--stone);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.production-images {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.production-images img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
 
-  /* PERKS GRID */
-  .perks-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 40px;
-  }
-  .perk-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px;
-    background: white;
-    border-radius: 10px;
-    border: 1px solid #ede8dc;
-  }
-  .perk-icon {
-    width: 36px;
-    height: 36px;
-    background: #f5f0e8;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .perk-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: #2c2c2c;
-    margin-bottom: 3px;
-  }
-  .perk-desc {
-    font-size: 12px;
-    color: #777;
-    line-height: 1.5;
-  }
+/* ─── TRADE PROGRAM ─── */
+#trade {
+  background: var(--moss);
+  padding: 100px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+#trade .section-title { color: white; }
+#trade .section-body { color: rgba(255,255,255,0.65); }
+.trade-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.trade-tier {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: background 0.2s;
+}
+.trade-tier:hover { background: rgba(255,255,255,0.14); }
+.trade-tier-left .tier-name {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 4px;
+}
+.trade-tier-left .tier-desc {
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+}
+.tier-discount-badge {
+  background: var(--teak);
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.referral-callout {
+  margin-top: 24px;
+  background: rgba(196,135,74,0.2);
+  border: 1px solid rgba(196,135,74,0.4);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.referral-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--teak);
+  white-space: nowrap;
+}
+.referral-callout p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+.referral-callout strong { color: white; }
 
-  /* HOW IT WORKS */
-  .steps {
-    display: flex;
-    gap: 0;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #e8e2d8;
-  }
-  .step {
-    flex: 1;
-    text-align: center;
-    padding: 0 16px;
-    position: relative;
-  }
-  .step:not(:last-child)::after {
-    content: '→';
-    position: absolute;
-    right: -8px;
-    top: 16px;
-    color: #c4874a;
-    font-size: 16px;
-  }
-  .step-num {
-    width: 36px;
-    height: 36px;
-    background: #c4874a;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 700;
-    margin: 0 auto 12px;
-  }
-  .step-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: #2c2c2c;
-    margin-bottom: 5px;
-  }
-  .step-desc {
-    font-size: 11.5px;
-    color: #888;
-    line-height: 1.6;
-  }
+/* ─── PROJECTS ─── */
+#projects { background: var(--sand); }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.project-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.project-img {
+  height: 220px;
+  overflow: hidden;
+}
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+.project-card:hover .project-img img { transform: scale(1.06); }
+.project-details {
+  padding: 22px 24px;
+}
+.project-tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teak);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.project-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.project-location {
+  font-size: 12px;
+  color: var(--stone);
+}
+.project-furniture {
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.5;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
 
-  /* CTA */
-  .cta-section {
-    background: linear-gradient(135deg, #5a6b4a, #3d4d33);
-    border-radius: 14px;
-    padding: 32px 36px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 24px;
-    align-items: center;
-  }
-  .cta-section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: white;
-    margin-bottom: 6px;
-  }
-  .cta-section p {
-    font-size: 13px;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
-  }
-  .cta-section a {
-    display: inline-block;
-    background: white;
-    color: #3d4d33;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 14px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.2s;
-  }
-  .cta-section a:hover { background: #f5f0e8; }
+/* ─── CONTACT ─── */
+#contact {
+  background: var(--charcoal);
+  padding: 100px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+#contact .section-title { color: white; }
+#contact .section-body { color: rgba(255,255,255,0.55); margin-bottom: 40px; }
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(196,135,74,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.contact-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 2px;
+}
+.contact-value {
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+}
+.contact-value a {
+  color: var(--teak);
+  text-decoration: none;
+}
+.contact-value a:hover { text-decoration: underline; }
 
-  /* FOOTER */
-  .footer {
-    background: #2c2c2c;
-    padding: 18px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer .brand {
-    font-family: 'Playfair Display', serif;
-    color: white;
-    font-size: 16px;
-  }
-  .footer .contact {
-    font-size: 12px;
-    color: #aaa;
-    text-align: right;
-  }
-  .footer .contact a {
-    color: #c4874a;
-    text-decoration: none;
-  }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-input {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input::placeholder { color: rgba(255,255,255,0.3); }
+.form-input:focus { border-color: var(--teak); }
+textarea.form-input { resize: vertical; min-height: 120px; }
+.form-submit {
+  background: var(--teak);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+.form-submit:hover { background: #b37640; }
 
-  @media print {
-    body { padding: 0; background: white; }
-    .page { box-shadow: none; width: 100%; }
-  }
+/* ─── FOOTER ─── */
+footer {
+  background: #111;
+  padding: 48px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: white;
+}
+.footer-brand span { color: var(--teak); }
+.footer-tagline {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 4px;
+}
+.footer-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--teak); }
+.footer-copy {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  text-align: right;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-content { padding: 60px 32px; }
+  .hero-title { font-size: 40px; }
+  .hero-images { display: none; }
+  .stats-bar { flex-wrap: wrap; padding: 32px; gap: 20px; justify-content: center; }
+  .stat-divider { display: none; }
+  section { padding: 60px 32px; }
+  #sustainability, #story, #trade, #contact { grid-template-columns: 1fr; gap: 40px; padding: 60px 32px; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .production-stats { grid-template-columns: repeat(2, 1fr); }
+  .production-images { grid-template-columns: 1fr; }
+  .production-images img { height: 200px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; padding: 40px 24px; }
+  .footer-copy { text-align: center; }
+}
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <span>Shoreline Design &nbsp;·&nbsp; Artisan Partner Program</span>
-    <a href="mailto:shorelinedesignvan@gmail.com">shorelinedesignvan@gmail.com</a>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Shoreline<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#sustainability">Sustainability</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#trade">Trade Program</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Canada's Sustainable Furniture Destination</div>
+    <h1 class="hero-title">Forever<br/>furniture,<br/><em>rooted in</em><br/>Nicaragua.</h1>
+    <p class="hero-body">Shoreline Design brings MasayaCo's handcrafted, FSC-certified teak furniture to Canada — made by skilled artisans, grown in reforestation forests, designed to be passed down.</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">Shop the Collection</a>
+      <a href="#trade" class="btn-outline">Trade Program</a>
+    </div>
   </div>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-eyebrow">For Interior Designers &amp; Architects · Vancouver, BC</div>
-    <div class="hero-title">Furniture your<br/>clients will <em>keep</em><br/>forever.</div>
-    <div class="hero-subtitle">Shoreline Design brings MasayaCo's handcrafted, FSC-certified teak furniture to Canada — and we've built a trade program designed to make your work easier, your margins better, and your clients happier.</div>
-  </div>
-
-  <!-- PRODUCT STRIP -->
-  <div class="product-strip">
-    <img src="img1.jpg" alt="Masaya Lounge Chair"/>
+  <div class="hero-images">
+    <img src="img1.jpg" alt="Masaya Lounge Chair" class="hero-img-large"/>
     <img src="img2.webp" alt="Amador Rocking Chair"/>
     <img src="img4.jpg" alt="Chontales Barstool"/>
   </div>
+</section>
 
-  <!-- BODY -->
-  <div class="body">
-
-    <!-- INTRO -->
-    <div class="intro">
-      <div class="intro-text">
-        <h2>Handcrafted in Nicaragua.<br/>Delivered across Canada.</h2>
-        <p>MasayaCo has spent over a decade perfecting the art of sustainable teak furniture — FSC-certified wood, handwoven patterns, heirloom quality. Every piece is made by skilled artisans and designed to be repaired, not replaced.<br/><br/>Shoreline Design is the exclusive Canadian importer. As a partner, you get direct access to their full collection with trade pricing, dedicated support, and white-glove delivery included.</p>
-      </div>
-      <div class="intro-stats">
-        <div class="stat">
-          <div class="stat-num">4,000+</div>
-          <div class="stat-label">Unique designs<br/>available to trade</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">1M+</div>
-          <div class="stat-label">Trees planted through<br/>reforestation projects</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">12yr</div>
-          <div class="stat-label">MasayaCo craftsmanship<br/>heritage since 2014</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCT GALLERY -->
-    <div class="gallery-section">
-      <div class="section-label">Featured Collection — Available to Trade Partners</div>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="img1.jpg" alt="Masaya Lounge Chair San Geronimo"/>
-          <div class="gallery-label">Masaya Lounge Chair · San Geronimo</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img2.webp" alt="Amador Rocking Chair Fuego"/>
-          <div class="gallery-label">Amador Rocking Chair · Fuego</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img3.jpg" alt="Chontales Dining Chair Serena"/>
-          <div class="gallery-label">Chontales Dining Chair · Serena</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img4.jpg" alt="Chontales Barstool San Geronimo"/>
-          <div class="gallery-label">Chontales Barstool · San Geronimo</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img5.jpg" alt="Masaya Armchair Vaqueano"/>
-          <div class="gallery-label">Masaya Armchair · Vaqueano</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img6.webp" alt="Amador Rocking Chair Mot Mot"/>
-          <div class="gallery-label">Amador Rocking Chair · Mot Mot</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img7.webp" alt="Santa Cruz Bench San Geronimo"/>
-          <div class="gallery-label">Santa Cruz Bench · San Geronimo</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img8.jpg" alt="Masaya Rocking Chair San Geronimo"/>
-          <div class="gallery-label">Masaya Rocking Chair · San Geronimo</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img9.jpg" alt="Masaya Lounge Chair Colonial"/>
-          <div class="gallery-label">Masaya Lounge Chair · Colonial</div>
-        </div>
-        <div class="gallery-item">
-          <img src="img1.jpg" alt="Masaya Lounge Chair San Geronimo Cover"/>
-          <div class="gallery-label">Masaya Lounge Chair · Natural Cover</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TIERS -->
-    <div class="section-label">Trade Discount Tiers</div>
-    <div class="tiers">
-      <div class="tier">
-        <div class="tier-name">Partner</div>
-        <div class="tier-discount">15%</div>
-        <div class="tier-threshold">First order placed</div>
-        <ul class="tier-perks">
-          <li>Trade discount on all orders</li>
-          <li>Free sample kit</li>
-          <li>Dedicated account support</li>
-          <li>Trade portal access</li>
-        </ul>
-      </div>
-      <div class="tier">
-        <div class="tier-name">Silver</div>
-        <div class="tier-discount">18%</div>
-        <div class="tier-threshold">CAD $5,000+ annually</div>
-        <ul class="tier-perks">
-          <li>Everything in Partner</li>
-          <li>Priority lead times</li>
-          <li>Co-branded lookbook pages</li>
-          <li>Early collection access</li>
-        </ul>
-      </div>
-      <div class="tier featured">
-        <div class="featured-badge">Top Tier</div>
-        <div class="tier-name">Gold</div>
-        <div class="tier-discount">20%</div>
-        <div class="tier-threshold">CAD $15,000+ annually</div>
-        <ul class="tier-perks">
-          <li>Everything in Silver</li>
-          <li>Free white-glove delivery on all orders</li>
-          <li>Dedicated account rep</li>
-          <li>Annual Vancouver designer event invite</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- REFERRAL -->
-    <div class="referral-box">
-      <div>
-        <h3>Refer a designer. Earn store credit.</h3>
-        <p>When you refer a fellow designer or architect who places their first order with Shoreline Design, you earn CAD $150 in store credit — automatically applied to your next order. No paperwork. No cap on referrals.</p>
-      </div>
-      <div class="referral-credit">
-        <span class="amount">$150</span>
-        <span class="credit-label">Per referral<br/>store credit</span>
-      </div>
-    </div>
-
-    <!-- PERKS -->
-    <div class="section-label">What's Included in Every Partner Account</div>
-    <div class="perks-grid">
-      <div class="perk-item">
-        <div class="perk-icon">🎨</div>
-        <div>
-          <div class="perk-title">Free Sample Kit</div>
-          <div class="perk-desc">Swatches, material samples, and finish options — everything you need to show clients in person.</div>
-        </div>
-      </div>
-      <div class="perk-item">
-        <div class="perk-icon">🚚</div>
-        <div>
-          <div class="perk-title">White-Glove Delivery</div>
-          <div class="perk-desc">Room-of-choice delivery and full setup included on Gold tier. Available on all tiers at preferred rates.</div>
-        </div>
-      </div>
-      <div class="perk-item">
-        <div class="perk-icon">📐</div>
-        <div>
-          <div class="perk-title">Co-Branded Lookbooks</div>
-          <div class="perk-desc">Custom pages you can drop into your client presentations — your name, our furniture.</div>
-        </div>
-      </div>
-      <div class="perk-item">
-        <div class="perk-icon">⚡</div>
-        <div>
-          <div class="perk-title">Early Collection Access</div>
-          <div class="perk-desc">See new MasayaCo drops before the public. First pick on limited edition colourways and patterns.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HOW IT WORKS -->
-    <div class="section-label">How to Join</div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-title">Apply</div>
-        <div class="step-desc">Email us or fill out the form at our website. Takes 2 minutes.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-title">Get Approved</div>
-        <div class="step-desc">We review within 48 hours and send your trade portal login.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-title">Receive Your Kit</div>
-        <div class="step-desc">Free sample kit ships to you within 5 business days.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-title">Start Ordering</div>
-        <div class="step-desc">Place your first order and your 15% discount applies immediately.</div>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta-section">
-      <div>
-        <h3>Ready to bring forever furniture to your clients?</h3>
-        <p>Email us to apply or ask any questions. We respond within 24 hours.<br/>
-        <strong style="color:white;">shorelinedesignvan@gmail.com</strong></p>
-      </div>
-      <a href="mailto:shorelinedesignvan@gmail.com">Apply Now →</a>
-    </div>
-
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-number">1.3M+</span>
+    <span class="stat-desc">Trees Planted</span>
   </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="brand">Shoreline Design</div>
-    <div class="contact">
-      Vancouver, BC &nbsp;·&nbsp; Canada<br/>
-      <a href="mailto:shorelinedesignvan@gmail.com">shorelinedesignvan@gmail.com</a>
-    </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-number">1,300</span>
+    <span class="stat-desc">Acres Reforested</span>
   </div>
-
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-number">400</span>
+    <span class="stat-desc">Artisans & Designers</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-number">6,000+</span>
+    <span class="stat-desc">Designs Available</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-number">12yr</span>
+    <span class="stat-desc">Craftsmanship Heritage</span>
+  </div>
 </div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-eyebrow">The Collection</div>
+      <h2 class="section-title">Handcrafted for<br/>Canadian homes.</h2>
+    </div>
+    <a href="https://www.masayaco.com/collections/masayaco-bestsellers-collection" target="_blank" class="view-all">View Full Collection →</a>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="img1.jpg" alt="Masaya Lounge Chair"/>
+      <div class="product-info">
+        <div class="product-name">Masaya Lounge Chair</div>
+        <div class="product-sub">San Geronimo Pattern · Natural Teak</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="img2.webp" alt="Amador Rocking Chair"/>
+      <div class="product-info">
+        <div class="product-name">Amador Rocking Chair</div>
+        <div class="product-sub">Fuego Pattern · Natural Teak</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="img5.jpg" alt="Masaya Armchair"/>
+      <div class="product-info">
+        <div class="product-name">Masaya Armchair</div>
+        <div class="product-sub">Vaqueano Pattern · Natural Teak</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="img8.jpg" alt="Masaya Rocking Chair"/>
+      <div class="product-info">
+        <div class="product-name">Masaya Rocking Chair</div>
+        <div class="product-sub">San Geronimo Pattern · Natural Teak</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="img3.jpg" alt="Chontales Dining Chair"/>
+      <div class="product-info">
+        <div class="product-name">Chontales Dining Chair</div>
+        <div class="product-sub">Serena Pattern · Natural Teak</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="img4.jpg" alt="Chontales Barstool"/>
+      <div class="product-info">
+        <div class="product-name">Chontales Barstool</div>
+        <div class="product-sub">San Geronimo Pattern · Natural Teak</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="img7.webp" alt="Santa Cruz Bench"/>
+      <div class="product-info">
+        <div class="product-name">Santa Cruz Bench</div>
+        <div class="product-sub">San Geronimo Pattern · Natural Teak</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="img9.jpg" alt="Masaya Lounge Chair Colonial"/>
+      <div class="product-info">
+        <div class="product-name">Masaya Lounge Chair</div>
+        <div class="product-sub">Colonial Pattern · Coffee Teak</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY -->
+<section id="sustainability">
+  <div>
+    <div class="section-eyebrow">Built on Reforestation</div>
+    <h2 class="section-title" style="color:white;">Wood is the most<br/>sustainable building<br/>material on earth.</h2>
+    <p class="section-body">Every Shoreline Design piece begins as a seed — planted in one of MasayaCo's reforestation projects on former cow pastures in Nicaragua. The wood grows, gets harvested responsibly, and is shaped by hand into furniture that will still be standing generations from now.</p>
+    <div class="sustain-points">
+      <div class="sustain-point">
+        <div class="sustain-icon">🌱</div>
+        <div>
+          <h4>Seed to Seat</h4>
+          <p>MasayaCo controls the entire supply chain — from their own forests to their 150,000 ft² production facility, to your door.</p>
+        </div>
+      </div>
+      <div class="sustain-point">
+        <div class="sustain-icon">🌿</div>
+        <div>
+          <h4>FSC-Certified Teak</h4>
+          <p>All wood is sourced from FSC-certified reforestation projects. No old-growth forests. No shortcuts.</p>
+        </div>
+      </div>
+      <div class="sustain-point">
+        <div class="sustain-icon">♻️</div>
+        <div>
+          <h4>Carbon Captured in Every Piece</h4>
+          <p>Wood is roughly 50% captured carbon. Every piece of furniture you own is a carbon store, not a carbon cost.</p>
+        </div>
+      </div>
+      <div class="sustain-point">
+        <div class="sustain-icon">🔧</div>
+        <div>
+          <h4>Designed to Be Repaired</h4>
+          <p>Not designed to be replaced. Every piece can be rewoven, refinished, and restored — built for a lifetime, not a trend cycle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sustain-image-grid">
+    <img src="img6.webp" alt="Artisan craftsmanship"/>
+    <img src="img1.jpg" alt="Natural teak"/>
+    <img src="img9.jpg" alt="Colonial lounge chair"/>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-grid">
+    <div class="story-image">
+      <img src="img5.jpg" alt="MasayaCo artisan"/>
+      <div class="story-badge">
+        <div class="badge-title">Masaya, Nicaragua</div>
+        <div class="badge-sub">Nicaragua's artisan town</div>
+      </div>
+    </div>
+    <div class="story-content">
+      <div class="section-eyebrow">Our Story</div>
+      <h2 class="section-title">Started as a reforestation project. Became forever furniture.</h2>
+      <p class="section-body">MasayaCo was founded in 2008 by Aram Terry — a Peace Corps volunteer who fell in love with Nicaragua — and Abril Zepeda, a native of Masaya and master weaver. What began as an effort to reforest degraded cow pastures became one of Central America's most respected furniture companies.</p>
+      <p class="section-body" style="margin-top:16px;">Today, their 12-acre production facility employs 400 designers and artisans, operates its own sawmill and kilns, and ships to the world's finest hotels and residences. Shoreline Design brings this vision to Canada for the very first time.</p>
+      <div class="founders">
+        <div class="founder">
+          <div class="founder-name">Abril Zepeda</div>
+          <div class="founder-role">Co-Founder · Creative Director · Weave Master</div>
+        </div>
+        <div class="founder">
+          <div class="founder-name">Aram Terry</div>
+          <div class="founder-role">Co-Founder · Peace Corps Nicaragua 2002</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTION -->
+<section id="production">
+  <div class="section-eyebrow" style="text-align:center;">The Workshop</div>
+  <h2 class="section-title" style="text-align:center; margin:0 auto 16px;">Built at scale.<br/>Made by hand.</h2>
+  <p class="section-body" style="text-align:center; margin:0 auto 60px;">MasayaCo's production facility in Masaya, Nicaragua is unlike anything else in Central America — a full vertically integrated operation where every step, from sawmill to final weave, happens under one roof.</p>
+  <div class="production-stats">
+    <div class="prod-stat">
+      <span class="prod-stat-num">12</span>
+      <div class="prod-stat-label">Acres Production Facility</div>
+    </div>
+    <div class="prod-stat">
+      <span class="prod-stat-num">150K</span>
+      <div class="prod-stat-label">Square Feet Under Roof</div>
+    </div>
+    <div class="prod-stat">
+      <span class="prod-stat-num">400</span>
+      <div class="prod-stat-label">Designers & Artisans</div>
+    </div>
+    <div class="prod-stat">
+      <span class="prod-stat-num">12–16</span>
+      <div class="prod-stat-label">Week Lead Times</div>
+    </div>
+  </div>
+  <div class="production-images">
+    <img src="img2.webp" alt="Production"/>
+    <img src="img3.jpg" alt="Artisan weave"/>
+    <img src="img8.jpg" alt="Teak chair"/>
+  </div>
+</section>
+
+<!-- TRADE PROGRAM -->
+<section id="trade">
+  <div>
+    <div class="section-eyebrow" style="color:rgba(255,255,255,0.5);">For Interior Designers</div>
+    <h2 class="section-title">The Artisan<br/>Partner Program.</h2>
+    <p class="section-body">Vancouver-based interior designers and architects get exclusive trade pricing, free sample kits, dedicated support, and co-branded lookbook materials — everything you need to bring these pieces into your client projects.</p>
+    <div style="margin-top:36px; display:flex; flex-direction:column; gap:12px;">
+      <p style="font-size:13px; color:rgba(255,255,255,0.5);">✦ &nbsp;Free designer sample kit shipped to your studio</p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.5);">✦ &nbsp;Access to 6,000+ designs, patterns, and colourways</p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.5);">✦ &nbsp;Custom pattern design at 20% premium</p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.5);">✦ &nbsp;White-glove delivery included on Gold tier</p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.5);">✦ &nbsp;Early access to new collections</p>
+    </div>
+    <div style="margin-top:32px;">
+      <a href="mailto:shorelinedesignvan@gmail.com" class="btn-primary">Apply to the Program →</a>
+    </div>
+  </div>
+  <div>
+    <div class="trade-tiers">
+      <div class="trade-tier">
+        <div class="trade-tier-left">
+          <div class="tier-name">Partner</div>
+          <div class="tier-desc">First order placed — instant approval</div>
+        </div>
+        <div class="tier-discount-badge">15%</div>
+      </div>
+      <div class="trade-tier">
+        <div class="trade-tier-left">
+          <div class="tier-name">Silver</div>
+          <div class="tier-desc">CAD $5,000+ annually · Priority lead times</div>
+        </div>
+        <div class="tier-discount-badge">18%</div>
+      </div>
+      <div class="trade-tier">
+        <div class="trade-tier-left">
+          <div class="tier-name">Gold</div>
+          <div class="tier-desc">CAD $15,000+ · Free white-glove delivery</div>
+        </div>
+        <div class="tier-discount-badge">20%</div>
+      </div>
+    </div>
+    <div class="referral-callout">
+      <div class="referral-amount">$150</div>
+      <p><strong>Refer a designer, earn store credit.</strong> When a designer you refer places their first order, you receive CAD $150 credit — automatically. No cap on referrals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-eyebrow">Hospitality & Residential</div>
+  <h2 class="section-title">Where MasayaCo<br/>furniture lives.</h2>
+  <p class="section-body">From Ritz-Carlton reserves to private residences in Vermont, MasayaCo's furniture has furnished some of the world's most thoughtfully designed spaces. Here's a selection of completed projects.</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-img">
+        <img src="img6.webp" alt="Nekajui Ritz-Carlton"/>
+      </div>
+      <div class="project-details">
+        <div class="project-tag">Hospitality · Costa Rica</div>
+        <div class="project-name">Nekajui, a Ritz-Carlton Reserve</div>
+        <div class="project-location">Peninsula Papagayo, Costa Rica</div>
+        <div class="project-furniture">Custom hall table, custom bench, Chontales Stool.</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img">
+        <img src="img7.webp" alt="Residential Vermont"/>
+      </div>
+      <div class="project-details">
+        <div class="project-tag">Residential · Vermont, USA</div>
+        <div class="project-name">Galen Arnot Interiors</div>
+        <div class="project-location">Stowe, Vermont</div>
+        <div class="project-furniture">Chontales Dining Chair in Custom Pattern.</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img">
+        <img src="img10.jpg" alt="Santa Familia Panama"/>
+      </div>
+      <div class="project-details">
+        <div class="project-tag">Hospitality · Panama</div>
+        <div class="project-name">Santa Familia</div>
+        <div class="project-location">Casco Viejo, Panama</div>
+        <div class="project-furniture">Verbena Armchair, Manzanillo Coffee Table, Telica Side Table — all in Sealed Teak.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <div class="section-eyebrow" style="color:var(--teak);">Get in Touch</div>
+    <h2 class="section-title">Ready to bring forever furniture to your home?</h2>
+    <p class="section-body">Whether you're furnishing a home, specifying for a project, or applying to our designer trade program — we'd love to hear from you.</p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:+17783841549">+1 778.384.1549</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:shorelinedesignvan@gmail.com">shorelinedesignvan@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Location</div>
+          <div class="contact-value">Vancouver, BC, Canada</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="contact-label">Lead Times</div>
+          <div class="contact-value">12–16 weeks from order to delivery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="First name" required/>
+        <input type="text" class="form-input" placeholder="Last name" required/>
+      </div>
+      <input type="email" class="form-input" placeholder="Email address" required/>
+      <input type="text" class="form-input" placeholder="Subject (e.g. Trade Program, Product Inquiry)"/>
+      <textarea class="form-input" placeholder="Tell us about your project or enquiry..."></textarea>
+      <button type="submit" class="form-submit">Send Message →</button>
+      <p id="form-msg" style="font-size:13px; color:var(--teak); display:none;">✓ Thanks! We'll be in touch within 24 hours.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">Shoreline<span>.</span></div>
+    <div class="footer-tagline">Forever furniture, rooted in Nicaragua.</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#sustainability">Sustainability</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#trade">Trade</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">
+    © 2026 Shoreline Design, Vancouver BC<br/>
+    Product imagery © MasayaCo
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-msg').style.display = 'block';
+  e.target.reset();
+  // To connect a real form: replace this with a Formspree or Netlify Forms endpoint
+}
+
+// Smooth nav highlight on scroll
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--teak)' : '';
+  });
+});
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════════
+  GITHUB & DOMAIN DEPLOYMENT GUIDE
+  ═══════════════════════════════════════════════════════════════
+
+  STEP 1 — UPLOAD TO GITHUB
+  ─────────────────────────
+  In your GitHub repo (github.com/yourusername/shoreline-design):
+  1. Delete the old index.html (if one exists)
+  2. Click "Add file" → "Upload files"
+  3. Upload: index.html + img1.jpg, img2.webp, img3.jpg, img4.jpg,
+     img5.jpg, img6.webp, img7.webp, img8.jpg, img9.jpg, img10.jpg
+  4. Click "Commit changes"
+
+  STEP 2 — ENABLE GITHUB PAGES (if not already done)
+  ────────────────────────────────────────────────────
+  1. Go to your repo → Settings → Pages
+  2. Source: "Deploy from a branch"
+  3. Branch: main | Folder: / (root)
+  4. Click Save
+  5. Your site goes live at: https://yourusername.github.io/shoreline-design
+
+  STEP 3 — CONNECT YOUR CUSTOM DOMAIN
+  ─────────────────────────────────────
+  In Namecheap (or your registrar) → Advanced DNS, add:
+
+  Type        | Host | Value
+  ------------|------|----------------------
+  A Record    | @    | 185.199.108.153
+  A Record    | @    | 185.199.109.153
+  A Record    | @    | 185.199.110.153
+  A Record    | @    | 185.199.111.153
+  CNAME       | www  | yourusername.github.io
+
+  Then in GitHub → Settings → Pages → Custom domain:
+  → Type your domain (e.g. shorelinedesign.ca) → Save
+  → Check "Enforce HTTPS"
+
+  DNS propagation: 15 min to 24 hours.
+  After that, your domain loads this site automatically.
+
+  STEP 4 — CONNECT THE CONTACT FORM (optional but recommended)
+  ──────────────────────────────────────────────────────────────
+  The contact form currently shows a success message but doesn't
+  send emails. To make it real:
+  1. Go to formspree.io → create a free account
+  2. Create a new form → copy your form endpoint URL
+  3. In this file, find the <form> tag and change it to:
+     <form action="https://formspree.io/f/YOUR_ID" method="POST">
+  4. Remove the onsubmit="handleSubmit(event)" attribute
+  5. Re-upload index.html to GitHub
+  Now every form submission emails shorelinedesignvan@gmail.com directly.
+
+═══════════════════════════════════════════════════════════════ -->
+
 </body>
 </html>
